@@ -1,2 +1,2 @@
 # demo_blog
-demo_admin
+demo_blog
