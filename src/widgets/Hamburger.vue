@@ -1,8 +1,8 @@
 /*
  * @Author: soong
  * @Date: 2017-11-27 16:37:33
- * @Last Modified by:   soong
- * @Last Modified time: 2017-11-27 16:37:33
+ * @Last Modified by: soong
+ * @Last Modified time: 2017-11-27 17:09:17
  */
 <template>
     <button @click.prevent="toggleActive" class="hamburger hamburger-arrow-left" :class="{active: active}">
@@ -84,14 +84,14 @@ $bar-width: 0.1em;
             transform: rotate(180deg);
             &:before {
                 width: .6em;
-                transform: translateX(.45em) translateY(.1em) rotate(45deg);
+                transform: translateX(.5em) translateY(.1em) rotate(45deg);
             }
             .icon {
                 border-radius: .1em .25em .25em .1em;
             }
             &:after {
                 width: .6em;
-                transform: translateX(.45em) translateY(-.1em) rotate(-45deg);
+                transform: translateX(.5em) translateY(-.1em) rotate(-45deg);
             }
         }
     }

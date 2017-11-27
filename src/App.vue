@@ -1,12 +1,30 @@
 <template>
     <b-container>
+        <hamburger @statechanged="hamburgerToggled"></hamburger>
         <router-view></router-view>
     </b-container>
 </template>
 
 <script>
-export default {
+import Hamburger from './widgets/Hamburger';
 
+export default {
+    components: {
+        Hamburger,
+    },
+    data() {
+        return {
+        };
+    },
+    methods: {
+        name() {
+
+        },
+
+        hamburgerToggled() {
+
+        },
+    },
 };
 </script>
 
