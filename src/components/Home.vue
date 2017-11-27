@@ -1,14 +1,33 @@
 <template>
-    <div>
-home
+    <!-- <hamburger @statechanged="hamburgerToggled"></hamburger> -->
+    <responsive-layout>
 
-    </div>
+    </responsive-layout>
 </template>
 
 <script>
-    export default {
+import Hamburger from '../widgets/Hamburger';
+import ResponsiveLayout from '../layout/ResponsiveLayout';
 
-    };
+export default {
+    components: {
+        Hamburger,
+        ResponsiveLayout,
+    },
+    data() {
+        return {
+        };
+    },
+    methods: {
+        name() {
+
+        },
+
+        hamburgerToggled() {
+
+        },
+    },
+};
 </script>
 
 <style scoped>

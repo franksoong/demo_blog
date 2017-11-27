@@ -1,16 +1,13 @@
 <template>
-    <b-container>
-        <hamburger @statechanged="hamburgerToggled"></hamburger>
+    <div>
         <router-view></router-view>
-    </b-container>
+    </div>
 </template>
 
 <script>
-import Hamburger from './widgets/Hamburger';
 
 export default {
     components: {
-        Hamburger,
     },
     data() {
         return {
@@ -18,10 +15,6 @@ export default {
     },
     methods: {
         name() {
-
-        },
-
-        hamburgerToggled() {
 
         },
     },
@@ -34,6 +27,8 @@ export default {
 :root {
     // https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables
 }
+
+
 
 body {
     margin: 0px;

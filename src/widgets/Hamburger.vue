@@ -80,6 +80,10 @@ $bar-width: 0.1em;
         * LEFT ARROW
         */
     &.hamburger-arrow-left {
+        &:focus {
+            outline: none;
+        }
+
         &.active {
             transform: rotate(180deg);
             &:before {
