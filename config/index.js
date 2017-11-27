@@ -1,9 +1,10 @@
 /*
  * @Author: soong
- * @Date: 2017-11-17 10:59:22
- * @Last Modified by: soong
- * @Last Modified time: 2017-11-17 10:59:50
+ * @Date: 2017-11-27 16:16:53
+ * @Last Modified by:   soong
+ * @Last Modified time: 2017-11-27 16:16:53
  */
+
 
 //'use strict'
 // Template version: 1.1.3
@@ -22,16 +23,17 @@ module.exports = {
         index: path.resolve(__dirname, '../dist/index.html'),
         assetsRoot: path.resolve(__dirname, '../dist'),
         assetsPublicPath: '/',
+        productionSourceMap: true,
         //-------------end---------------
 
         //-------------custermized for github pages publish---------------
         // index: path.resolve(__dirname, '../docs/index.html'),
         // assetsRoot: path.resolve(__dirname, '../docs'),
-        // assetsPublicPath: '/demo_admin',
+        // assetsPublicPath: '/demo_admin/',
+        // productionSourceMap: false,
         //-------------end---------------
 
         assetsSubDirectory: 'static',
-        productionSourceMap: true,
         // Gzip off by default as many popular static hosts such as
         // Surge or Netlify already gzip all static assets for you.
         // Before setting to `true`, make sure to:

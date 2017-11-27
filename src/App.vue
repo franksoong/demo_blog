@@ -1,28 +1,27 @@
 <template>
-    <div>
-        <transition name='fade' mode='out-in'>
-            <router-view/>
-        </transition>
-    </div>
+    <b-container>
+        <router-view></router-view>
+    </b-container>
 </template>
 
 <script>
 export default {
-    name: 'app',
-    components: {
-    },
+
 };
 </script>
 
-<style scoped lang="scss">
+<style lang='scss'>
+@import './styles/vars.scss';
 
-.fade-enter-active,
-.fade-leave-active {
-    transition: all .2s ease;
+:root {
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables
 }
 
-.fade-enter,
-.fade-leave-active {
-    opacity: 0;
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: $--font-family;
+    font-size: $--font-size;
+    -webkit-font-smoothing: antialiased;
 }
 </style>

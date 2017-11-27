@@ -1,28 +1,27 @@
+/*
+ * @Author: soong
+ * @Date: 2017-11-27 16:24:57
+ * @Last Modified by: soong
+ * @Last Modified time: 2017-11-27 16:28:30
+ */
 
-import Home from '&/components/Home.vue';
-import NotFound from '&/components/404';
+import Home from '../components/Home';
+import NotFound from '../components/404';
 
-const routes = [
-    {
+const routes = [{
+    path: '/',
+    component: Home,
+    name: 'Home',
+}, {
+    path: '/404',
+    component: NotFound,
+    name: 'NotFound',
+}, {
+    path: '*',
+    redirect: {
         path: '/',
-        component: Home,
-        name: 'Home',
-        iconCls: 'fa fa-home',
-        children: [
-        ],
-    }, {
-        path: '/404',
-        component: NotFound,
-        name: 'NotFound',
-        hidden: true,
-    }, {
-        path: '*',
-        hidden: true,
-        redirect: {
-            path: '/404',
-        },
     },
-    // TODO add more...
-];
+}];
+
 
 export default routes;

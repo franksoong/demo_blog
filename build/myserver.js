@@ -1,5 +1,11 @@
-const path =require('path');
-const express =require('express');
+/*
+ * @Author: soong
+ * @Date: 2017-11-27 16:15:50
+ * @Last Modified by:   soong
+ * @Last Modified time: 2017-11-27 16:15:50
+ */
+const path = require('path');
+const express = require('express');
 const config = require('../config');
 const opn = require('opn');
 
@@ -18,13 +24,13 @@ app.use(express.static(config.build.assetsRoot))
 const uri = 'http://localhost:' + port
 
 app.listen(port, error => {
-  /* eslint-disable no-console */
-  if (error) {
-      console.error(error);
-  } else {
-      console.info('  Listening on port %s. Open up http://localhost:%s/ in your browser.', port, port);
+    /* eslint-disable no-console */
+    if (error) {
+        console.error(error);
+    } else {
+        console.info('  Listening on port %s. Open up http://localhost:%s/ in your browser.', port, port);
 
-      opn(uri);
-  }
-  /* eslint-enable no-console */
+        opn(uri);
+    }
+    /* eslint-enable no-console */
 });

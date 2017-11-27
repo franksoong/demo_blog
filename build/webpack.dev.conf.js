@@ -1,3 +1,9 @@
+/*
+ * @Author: soong
+ * @Date: 2017-11-27 16:16:21
+ * @Last Modified by:   soong
+ * @Last Modified time: 2017-11-27 16:16:21
+ */
 'use strict'
 const path = require('path')
 const utils = require('./utils')
