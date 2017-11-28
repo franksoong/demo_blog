@@ -5,7 +5,7 @@
                 <slot name='header'>header</slot>
             </b-col>
             <b-col class='wrap' :md='12' :class="{active: this.navheader_active}">
-                <!-- show this toogle only for <= sm  -->
+                <!-- show this toogle only for <= md  -->
                 <div class="sidebar-toggle d-lg-none">
                     <hamburger @statechanged="hamburgerToggled"></hamburger>
                 </div>
@@ -56,7 +56,7 @@ export default {
 .layout {
     overflow-x: hidden;
 
-    .main{
+    .main {
         // set the anchor point
         position: relative;
     }
@@ -66,12 +66,18 @@ export default {
         background-color: $gray-200;
     }
     .wrap {
+        position: relative;
         line-height: 500px;
         background-color: $gray-300;
     }
 
+
+
+
+
     @include media-breakpoint-down(md) {
-        .navheader {
+        .sidebar {
+            //navheader will change to sidebar in md scale
             line-height: 60px;
             background-color: $gray-200;
             position: absolute;
@@ -83,6 +89,11 @@ export default {
             overflow-y: auto;
             z-index: 100;
             transition: all .3s ease-in-out;
+        }
+
+
+        .navheader {
+            @extend .sidebar;
 
             &.active {
                 visibility: visible;
@@ -109,7 +120,8 @@ export default {
             display: block;
             border-radius: .25rem;
             cursor: pointer;
-            padding: 0;
+            padding: 10px; // background-color: red;
+            line-height: 1em;
         }
     }
 
