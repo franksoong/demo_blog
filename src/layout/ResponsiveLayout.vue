@@ -1,14 +1,14 @@
 <template>
     <b-container fluid class='layout'>
         <b-row class='main'>
-            <b-col class='navheader d-md-flex' :md='12' :class="navheader_class">
+            <b-col class='navheader d-md-flex' :md='12' :class="{active: this.navheader_active}">
                 <slot name='header'>header</slot>
             </b-col>
-            <b-col class='content' :md='12' :sm='content_cols' :cols='content_cols'>
+            <b-col class='wrap' :md='12' :class="{active: this.navheader_active}">
                 <!-- show this toogle only for <= sm  -->
-                <b-row class="d-md-none d-lg-none">
+                <div class="sidebar-toggle d-lg-none">
                     <hamburger @statechanged="hamburgerToggled"></hamburger>
-                </b-row>
+                </div>
 
                 <slot name='content'>content</slot>
             </b-col>
@@ -33,20 +33,9 @@ export default {
     },
     computed: {
         content_cols() {
-            return this.navheader_active ? 9 : 12;
+            // return this.navheader_active ? 9 : 12;
+            return 12;
         },
-        navheader_class() {
-            return this.navheader_active ? {
-                'col-sm-3': true,
-                'col-3': true,
-                'd-sm-none': false,
-                'd-none': false,
-            } : {
-                'd-sm-none': true,
-                'd-none': true,
-            };
-        },
-
     },
     methods: {
         name() {
@@ -63,18 +52,20 @@ export default {
 <style scoped lang='scss'>
 @import '../styles/bootstrap-override.scss';
 
-.row>[class^=col-] {
-    background-color: rgba(86, 61, 124, .15);
-    border: 1px solid rgba(86, 61, 124, .2);
-}
-
 
 .layout {
+    overflow-x: hidden;
+
+    .main{
+        // set the anchor point
+        position: relative;
+    }
+
     .navheader {
         line-height: 60px;
         background-color: $gray-200;
     }
-    .content {
+    .wrap {
         line-height: 500px;
         background-color: $gray-300;
     }
@@ -83,13 +74,42 @@ export default {
         .navheader {
             line-height: 60px;
             background-color: $gray-200;
-            float: left;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -14rem;
+            width: 14rem;
+            visibility: hidden;
+            overflow-y: auto;
+            z-index: 100;
+            transition: all .3s ease-in-out;
+
+            &.active {
+                visibility: visible;
+                transform: translateX(14rem);
+            }
         }
 
-        .content {
+
+        .wrap {
             line-height: 500px;
             background-color: $gray-300;
-            float: left; // display: inline-flex;
+            width: 100%;
+            transition: all .3s ease-in-out;
+
+            &.active {
+                transform: translateX(14rem);
+            }
+        }
+
+        .sidebar-toggle {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: block;
+            border-radius: .25rem;
+            cursor: pointer;
+            padding: 0;
         }
     }
 

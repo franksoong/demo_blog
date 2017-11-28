@@ -2,7 +2,7 @@
  * @Author: soong
  * @Date: 2017-11-27 16:37:33
  * @Last Modified by: soong
- * @Last Modified time: 2017-11-27 17:09:17
+ * @Last Modified time: 2017-11-28 13:22:28
  */
 <template>
     <button @click.prevent="toggleActive" class="hamburger hamburger-arrow-left" :class="{active: active}">
@@ -37,7 +37,7 @@ export default {
 $color-hamburger: #777;
 $color-hamburger-active: #777;
 $font-size: 24px;
-$bar-width: 0.1em;
+$bar-width: 0.16em;
 
 .hamburger {
     font-size: $font-size;
@@ -63,7 +63,7 @@ $bar-width: 0.1em;
         margin: 0 0 .2em;
         transition: transform .2s ease-in-out;
         transition: width .2s;
-        border-radius: .05em;
+        border-radius: 1em;
         background: $color-hamburger;
     }
     &:after {
@@ -87,15 +87,15 @@ $bar-width: 0.1em;
         &.active {
             transform: rotate(180deg);
             &:before {
-                width: .6em;
-                transform: translateX(.5em) translateY(.1em) rotate(45deg);
+                width: .7em;
+                transform: translateX(.55em) translateY(.16em) rotate(45deg);
             }
             .icon {
                 border-radius: .1em .25em .25em .1em;
             }
             &:after {
-                width: .6em;
-                transform: translateX(.5em) translateY(-.1em) rotate(-45deg);
+                width: .7em;
+                transform: translateX(.55em) translateY(-.15em) rotate(-45deg);
             }
         }
     }
