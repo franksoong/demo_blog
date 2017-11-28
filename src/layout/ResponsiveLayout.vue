@@ -1,21 +1,21 @@
 <template>
     <b-container fluid class='layout'>
         <b-row class='main'>
-            <b-col class='navheader d-md-flex' :md='12' :class="{active: this.navheader_active}">
+            <b-col class='d-md-flex navheader' :class="{active: this.navheader_active}">
                 <slot name='header'>header</slot>
             </b-col>
-            <b-col class='wrap' :md='12' :class="{active: this.navheader_active}">
+            <b-col class='col-md-12 wrap' :class="{active: this.navheader_active}">
                 <!-- show this toogle only for <= md  -->
                 <div class="sidebar-toggle d-lg-none">
                     <hamburger @statechanged="hamburgerToggled"></hamburger>
                 </div>
 
-                <slot name='content'>content</slot>
+                <slot name='wrap'>wrap</slot>
             </b-col>
         </b-row>
-        <b-row class='footer'>
+        <!-- <b-row class='footer'>
             <slot name='footer'>footer</slot>
-        </b-row>
+        </b-row> -->
     </b-container>
 </template>
 
@@ -50,7 +50,7 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-@import '../styles/bootstrap-override.scss';
+@import '../styles/bootstrap-functions.scss';
 
 
 .layout {
@@ -62,8 +62,9 @@ export default {
     }
 
     .navheader {
-        line-height: 60px;
+        // line-height: 60px;
         background-color: $gray-200;
+        padding: 0;
     }
     .wrap {
         position: relative;
@@ -73,12 +74,11 @@ export default {
 
 
 
-
-
     @include media-breakpoint-down(md) {
+        // mobile first
         .sidebar {
             //navheader will change to sidebar in md scale
-            line-height: 60px;
+            // line-height: 60px;
             background-color: $gray-200;
             position: absolute;
             top: 0;
