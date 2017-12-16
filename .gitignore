@@ -20,3 +20,6 @@ selenium-debug.log
 # tmp file
 *.tmp
 *.TMP
+
+# lock file
+*-lock.json
